@@ -9,17 +9,22 @@ import SwiftUI
 
 struct TopListView: View{
     var body: some View{
+        
         NavigationView{
-            List(profiles){
-                profile in
-                NavigationLink{
-                    GameCard(profile: profile)
-                } label: {
-                GameCard(profile: profile)
-            }
-            .navigationTitle("SSET Contact 📒")
+            ZStack{
+                List(gameData){
+                    profile in
+                    HStack{
+                        Spacer()
+                        GameCard(profile: profile)
+                        Spacer()
+                    }.listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
+                }.navigationTitle("Top 20 the jam!")
+                    .environment(\.defaultMinListRowHeight, 20)
             }
         }
+        
     }
 }
 struct TopList_Previews: PreviewProvider {
@@ -27,3 +32,4 @@ struct TopList_Previews: PreviewProvider {
         TopListView()
     }
 }
+

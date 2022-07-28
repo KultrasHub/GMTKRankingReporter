@@ -10,7 +10,8 @@ struct GameCard:View{
     var profile: GameProfile
     let roundCornerSize = CGFloat(30)
     var  body: some View{
-        VStack{
+        ZStack(alignment:.center){
+          
             VStack(alignment:.leading)
             {
                 Image("FireAndDice").resizable()
@@ -18,7 +19,7 @@ struct GameCard:View{
                     .frame(width:SizeConstant.cardWidth, alignment: .bottomLeading)
                     .cornerRadius(30)
                     .overlay(alignment: .bottomLeading)
-                        {Text("50 hours")
+                {Text(profile.hours)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .frame(width: 130, height: 40, alignment: .center)
@@ -28,19 +29,19 @@ struct GameCard:View{
                                 .cornerRadius(roundCornerSize,corners: [.topRight,.bottomLeft,.bottomRight])
               
                         }
-                Text("Fire and Dice")
+                Text(profile.name)
                     .fontWeight(.bold)
                     .font(.system(size: 25))
-                let scoreValue="Score: "+String(4405)
+                let scoreValue="Score: "+String(profile.score)
                 //description
                 HStack{
-                    Text("30MB")
+                    Text(profile.size)
                         .fontWeight(.bold)
                         .opacity(0.6)
                         .foregroundColor(.black)
                     Text(scoreValue)
                         .fontWeight(.semibold)
-                    Text("Deck builder Roguelike")
+                    Text(profile.genre)
                         .fontWeight(.light)
                         .opacity(0.4)
                 }
@@ -49,11 +50,22 @@ struct GameCard:View{
     }
 
 }
-
+struct TestProfile:View{
+    let profile: GameProfile
+    var body: some View{
+        Text(profile.hours)
+    }
+}
+struct TestAnything:View{
+    let value: String
+    var body: some View{
+        Text(value)
+    }
+}
 struct GameCard_Preview:PreviewProvider
 {
     static var previews: some View{
-        GameCard(profile: profiles[0])
+        GameCard(profile: gameData[0])
     }
 }
 extension View {

@@ -32,11 +32,11 @@ struct ProfileText: View{
     let name:String
     let sid:String
     var body: some View{
-        VStack(spacing:10){
+        VStack(alignment:.center ,spacing:10){
             Text(intro)
                 .fontWeight(.bold)
                 .font(.system(size: 18))
-            VStack(alignment: .leading,spacing: 5){
+            VStack(alignment: .center,spacing: 5){
                 Text(name)
                     .fontWeight(.light)
                 Text(sid)
