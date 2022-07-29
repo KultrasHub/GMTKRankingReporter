@@ -8,30 +8,37 @@
 import SwiftUI
 struct GameCard:View{
     var profile: GameProfile
-    let roundCornerSize = CGFloat(30)
+    let roundCornerSize = CGFloat(15)
     var  body: some View{
         ZStack(alignment:.center){
-          
+          RoundedRectangle(cornerRadius: roundCornerSize)
+                .fill(.white)
+ 
+                .frame(width: SizeConstant.cardWidth, height: 235, alignment: .top)
+                .padding(0)
+                
             VStack(alignment:.leading)
             {
                 Image("FireAndDice").resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:SizeConstant.cardWidth, alignment: .bottomLeading)
-                    .cornerRadius(30)
+                    .cornerRadius(roundCornerSize,corners:[.topLeft,.topRight])
                     .overlay(alignment: .bottomLeading)
                 {Text(profile.hours)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                                .frame(width: 130, height: 40, alignment: .center)
+                                .frame(width: 130, height: 30, alignment: .center)
                                 .font(.system(size: 20))
                                 .background(ColorConstant.lightPink)
-                                .cornerRadius(0,corners: .topLeft)
-                                .cornerRadius(roundCornerSize,corners: [.topRight,.bottomLeft,.bottomRight])
+                                .cornerRadius(roundCornerSize,corners: .topRight)
+                                .opacity(0.9)
               
                         }
+                .padding(.bottom,-5)
                 Text(profile.name)
                     .fontWeight(.bold)
                     .font(.system(size: 25))
+                    .padding(.leading,7)
                 let scoreValue="Score: "+String(profile.score)
                 //description
                 HStack{
@@ -45,6 +52,7 @@ struct GameCard:View{
                         .fontWeight(.light)
                         .opacity(0.4)
                 }
+                .padding(.leading,7)
             }
         }
     }
@@ -65,7 +73,10 @@ struct TestAnything:View{
 struct GameCard_Preview:PreviewProvider
 {
     static var previews: some View{
+        ZStack{
+            Color(.gray).edgesIgnoringSafeArea(.all)
         GameCard(profile: gameData[0])
+        }
     }
 }
 extension View {

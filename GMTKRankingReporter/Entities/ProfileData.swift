@@ -48,4 +48,11 @@ struct GameProfile: Identifiable, Codable{
     var description:String
     var extraImage:[String]
     var author:[String]
+    func getAuthor()-> String{
+        var temp=""
+        for cur in author {
+            temp+=cur+" "
+        }
+        return temp
+    }
 }

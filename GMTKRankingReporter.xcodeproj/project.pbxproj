@@ -22,6 +22,8 @@
 		D2E8330B2891409500715B07 /* SelectText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8330A2891409500715B07 /* SelectText.swift */; };
 		D2E8330F2891460D00715B07 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8330E2891460D00715B07 /* StartingView.swift */; };
 		D2E833112891472600715B07 /* GameJamDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E833102891472600715B07 /* GameJamDescriptionView.swift */; };
+		FBDD77D22893C10700722924 /* SystemImage_Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD77D12893C10700722924 /* SystemImage_Text.swift */; };
+		FBDD77D42893C47200722924 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDD77D32893C47200722924 /* PhotoCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		D2E8330E2891460D00715B07 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		D2E833102891472600715B07 /* GameJamDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameJamDescriptionView.swift; sourceTree = "<group>"; };
 		FB70D5DB289281DE008DA5E7 /* data.geojson */ = {isa = PBXFileReference; explicitFileType = text.json; path = data.geojson; sourceTree = "<group>"; };
+		FBDD77D12893C10700722924 /* SystemImage_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage_Text.swift; sourceTree = "<group>"; };
+		FBDD77D32893C47200722924 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				D2E833002891344800715B07 /* SelectButton.swift */,
 				D2E8330A2891409500715B07 /* SelectText.swift */,
 				D2A64CB328916C1800502B7B /* GameCard.swift */,
+				FBDD77D12893C10700722924 /* SystemImage_Text.swift */,
+				FBDD77D32893C47200722924 /* PhotoCard.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -201,12 +207,14 @@
 				D2E832F12891178200715B07 /* ContentView.swift in Sources */,
 				D2E833012891344800715B07 /* SelectButton.swift in Sources */,
 				D2E832FD28911D0200715B07 /* Header.swift in Sources */,
+				FBDD77D22893C10700722924 /* SystemImage_Text.swift in Sources */,
 				D2E8330F2891460D00715B07 /* StartingView.swift in Sources */,
 				D2E832EF2891178200715B07 /* GMTKRankingReporterApp.swift in Sources */,
 				D285A8F12891BD4500E76F77 /* GameProfileView.swift in Sources */,
 				D285A8EF2891BB1C00E76F77 /* ProfileData.swift in Sources */,
 				D2E8330B2891409500715B07 /* SelectText.swift in Sources */,
 				D2A64CB82891758500502B7B /* SizeConstant.swift in Sources */,
+				FBDD77D42893C47200722924 /* PhotoCard.swift in Sources */,
 				D2A64CBA28917E9700502B7B /* TopListView.swift in Sources */,
 				D2E833092891389000715B07 /* ColorConstant.swift in Sources */,
 			);

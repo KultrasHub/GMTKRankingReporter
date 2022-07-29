@@ -10,9 +10,12 @@ import SwiftUI
 struct TopListView: View{
     var body: some View{
         
-        NavigationView{
-            ZStack{
-                List(gameData){
+        NavigationView
+        {
+            ZStack
+            {
+                List(gameData)
+                {
                     profile in
                     HStack{
                         Spacer()
@@ -20,13 +23,24 @@ struct TopListView: View{
                         Spacer()
                     }.listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
-                }.navigationTitle("Top 20 the jam!")
+                
+                }.navigationTitle("Featured Games")
                     .environment(\.defaultMinListRowHeight, 20)
+                  .navigationBarTitleDisplayMode(.inline)
+                  .toolbar()
+                {
+                    ToolbarItemGroup(placement: .navigationBarLeading)
+                    {
+                        BackwardButton(url:"nademonai")
+                    }
+                }
+
             }
         }
         
     }
 }
+    
 struct TopList_Previews: PreviewProvider {
     static var previews: some View {
         TopListView()
