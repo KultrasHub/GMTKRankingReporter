@@ -13,12 +13,13 @@ struct GameProfileView: View {
         ScrollView{
             ZStack(alignment: .topLeading){
                 //this image will always stay on top
-                Image("FireAndDice").resizable()
-                    .aspectRatio( contentMode: .fit)
-                    .frame(height: 400, alignment: .top)
-                    .frame(maxWidth:SizeConstant.screenWidth)
+                Image(profile.imageName).resizable()
+                    .aspectRatio( contentMode: .fill)
+                    .frame(width:SizeConstant.screenWidth, height: 200, alignment: .top)
                     .edgesIgnoringSafeArea(.top)
-                    .position(x: SizeConstant.halfScreen, y:200)
+                    .clipShape(Rectangle())
+                    .position(x: SizeConstant.halfScreen, y:100)
+
                 //this image will always stay on top
                 VStack(alignment:.leading,spacing:5){
                     HStack(alignment: .top){
@@ -72,6 +73,6 @@ struct GameProfileView: View {
 
 struct GameProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        GameProfileView(profile: gameData[4])
+        GameProfileView(profile: gameData[15])
     }
 }

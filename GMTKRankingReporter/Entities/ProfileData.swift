@@ -51,7 +51,7 @@ struct GameProfile: Identifiable, Codable{
     func getAuthor()-> String{
         var temp=""
         for cur in author {
-            temp+=cur+" "
+            temp+=cur+", "
         }
         return temp
     }

@@ -14,14 +14,15 @@ struct GameCard:View{
           RoundedRectangle(cornerRadius: roundCornerSize)
                 .fill(.white)
  
-                .frame(width: SizeConstant.cardWidth, height: 235, alignment: .top)
+                .frame(width: SizeConstant.cardWidth, height: 255, alignment: .top)
                 .padding(0)
-                
-            VStack(alignment:.leading)
+                .overlay(
+            VStack(alignment:.center)
             {
-                Image("FireAndDice").resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:SizeConstant.cardWidth, alignment: .bottomLeading)
+                Image(profile.imageName).resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width:SizeConstant.cardWidth,height: 200, alignment: .center)
+                    .clipShape(Rectangle())
                     .cornerRadius(roundCornerSize,corners:[.topLeft,.topRight])
                     .overlay(alignment: .bottomLeading)
                 {Text(profile.hours)
@@ -54,6 +55,7 @@ struct GameCard:View{
                 }
                 .padding(.leading,7)
             }
+            )
         }
     }
 
