@@ -43,7 +43,7 @@
 		D2E8330A2891409500715B07 /* SelectText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectText.swift; sourceTree = "<group>"; };
 		D2E8330E2891460D00715B07 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
 		D2E833102891472600715B07 /* GameJamDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameJamDescriptionView.swift; sourceTree = "<group>"; };
-		FB70D5DB289281DE008DA5E7 /* data.geojson */ = {isa = PBXFileReference; explicitFileType = text.json; path = data.geojson; sourceTree = "<group>"; };
+		FB70D5DB289281DE008DA5E7 /* data.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		FBDD77D12893C10700722924 /* SystemImage_Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage_Text.swift; sourceTree = "<group>"; };
 		FBDD77D32893C47200722924 /* PhotoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +103,7 @@
 				D2E833082891389000715B07 /* ColorConstant.swift */,
 				D2A64CB72891758500502B7B /* SizeConstant.swift */,
 				D285A8EE2891BB1C00E76F77 /* ProfileData.swift */,
-				FB70D5DB289281DE008DA5E7 /* data.geojson */,
+				FB70D5DB289281DE008DA5E7 /* data.json */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
