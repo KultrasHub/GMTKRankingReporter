@@ -23,7 +23,7 @@ struct GameProfileView: View {
                 //this image will always stay on top
                 VStack(alignment:.leading,spacing:5){
                     HStack(alignment: .top){
-                        BackwardButton(url: "nademonai")
+                        //BackwardButton(url: "nademonai")
                         Spacer()
                         Rectangle()
                             .frame(width: 0, height: 190)

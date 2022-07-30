@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct TopListView: View{
+    @Binding var active: ViewSelection
+    //there are 20 elements so there will be 20 box
     var body: some View{
-        
         NavigationView
         {
             ZStack
@@ -17,12 +19,20 @@ struct TopListView: View{
                 List(gameData)
                 {
                     profile in
-                    HStack{
-                        Spacer()
-                        GameCard(profile: profile)
-                        Spacer()
-                    }.listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
+                    NavigationLink
+                    {
+                        GameProfileView(profile: profile)
+                    }
+                label:
+                    {
+                        HStack{
+                            Spacer()
+                            GameCard(profile: profile)
+                            Spacer()
+                        }.listRowBackground(Color.clear)
+                            .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
+                    }.listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
+                        .frame(alignment: .center)
                 
                 }.navigationTitle("Featured Games")
                     .environment(\.defaultMinListRowHeight, 20)
@@ -31,19 +41,20 @@ struct TopListView: View{
                 {
                     ToolbarItemGroup(placement: .navigationBarLeading)
                     {
-                        BackwardButton(url:"nademonai")
+                        Button(action: {active = .starting}, label: {
+                            BackwardButton()
+                        })
                     }
                 }
 
             }
-        }
-        
+        }.accentColor(.white)
     }
 }
-    
+
 struct TopList_Previews: PreviewProvider {
     static var previews: some View {
-        TopListView()
+        TopListView(active: .constant(.starting))
     }
 }
 

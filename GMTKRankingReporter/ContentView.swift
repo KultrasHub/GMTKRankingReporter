@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var currentView:ViewSelection = .starting
     var body: some View {
-       StartingView()
+        switch currentView {
+        case .starting:
+            StartingView(active: $currentView)
+        case .about:
+            JamDescriptionView(active: $currentView)
+        case .list:
+            TopListView(active: $currentView)
+        case .randomList:
+            RandomListView(active: $currentView)
+        }
+
     }
 }
 
@@ -19,3 +29,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

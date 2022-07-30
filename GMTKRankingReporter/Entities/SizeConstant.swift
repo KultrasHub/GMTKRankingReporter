@@ -13,4 +13,5 @@ struct SizeConstant{
     static let cardWidth=screenWidth*0.85
     static let halfScreen=screenWidth/2;
     static let photoCardSize=screenWidth*0.4
+    static let diceSize=CGFloat(50)
 }

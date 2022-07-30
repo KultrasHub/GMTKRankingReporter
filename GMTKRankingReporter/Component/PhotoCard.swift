@@ -23,7 +23,7 @@ struct PhotoCard_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color.gray
-        PhotoCard(imageName: "lalalaa")
+        PhotoCard(imageName: "FireAndDice_main")
         }
     }
 }

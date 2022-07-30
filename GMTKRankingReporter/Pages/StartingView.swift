@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartingView: View {
-    
+    @Binding var active: ViewSelection
     var body: some View {
         ScrollView{
             ZStack{
@@ -31,10 +31,24 @@ struct StartingView: View {
                         .multilineTextAlignment(.center)
                         .frame(height:100)
                     Spacer()
-                    SelectButton(content: "Get Started", url: "nothing for now")
-                        .frame(height:100)
+                    HStack(spacing:20){
+                        Button(action:{active = .list
+                            //print("hey you clicked something")
+                        },
+                               label:{
+                        SelectButton(content: "Get Started")
+                            .frame(height:100)
+                        })
+                        Button(action:{active = .randomList
+                            //print("hey you clicked something")
+                        },
+                               label:{
+                        BorderSelectButton(content: "Random Mode")
+                            .frame(height:100)
+                        })
+                    }
                     Spacer()
-                    SelectText(intro: "Not sure what game jam is?", click: "Read more here")
+                    SelectText(intro: "Not sure what game jam is?", click: "Read more here",active: $active,viewSelectionValue: .about)
                         .frame(height:50)
                         .offset(x: 0, y: 10)
                     Spacer()
@@ -50,6 +64,6 @@ struct StartingView: View {
 
 struct Starting_Previews: PreviewProvider {
     static var previews: some View {
-        StartingView()
+        StartingView(active: .constant(.starting))
     }
 }

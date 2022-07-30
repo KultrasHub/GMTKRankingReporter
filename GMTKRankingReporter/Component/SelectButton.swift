@@ -8,7 +8,6 @@
 import SwiftUI
 struct SelectButton:View{
     let content : String
-    let url:String
     
     var body: some View{
         ZStack
@@ -20,7 +19,7 @@ struct SelectButton:View{
 //                               startPoint: .bottomTrailing,
 //                               endPoint: .topLeading)
 //            )
-            .frame(width: 200, height: 60, alignment: .center)
+            .frame(width: 150, height: 50, alignment: .center)
             .shadow(color: ColorConstant.shadowPink, radius: 4, x: 0, y: 5).opacity(0.8)
         Text(content)
                 .foregroundColor(.white)
@@ -31,9 +30,31 @@ struct SelectButton:View{
         }
     }
 }
+struct BorderSelectButton:View{
+    let content : String
+    
+    var body: some View{
+        ZStack
+        {
+        RoundedRectangle(cornerRadius: 10)
+                .stroke( ColorConstant.heavyPink,lineWidth: 3)
+//            .fill(
+//                LinearGradient(gradient: Gradient(colors: ColorConstant.colorPalette),
+//                               startPoint: .bottomTrailing,
+//                               endPoint: .topLeading)
+//            )
+            .frame(width: 150, height: 50, alignment: .center)
+            
+        Text(content)
+                .foregroundColor(ColorConstant.heavyPink)
+                .fontWeight(.heavy)
+                .font(.system(size: 20))
+                .shadow(radius: 5)
 
+        }
+    }
+}
 struct BackwardButton: View{
-    let url:String
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 15)
@@ -53,8 +74,11 @@ struct BackwardButton: View{
 struct SelectButton_Preview:PreviewProvider
 {
     static var previews: some View{
-        SelectButton(content: "Click Me",url: "something")
-            //BackwardButton(url: "nothign")
+        VStack{
+        SelectButton(content: "Click Me")
+        BorderSelectButton(content: "Click Me")
+        }
+            //BackwardButton()
 
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 struct SelectText: View{
     let intro:String
     let click:String
+    @Binding var active: ViewSelection
+    var viewSelectionValue:ViewSelection
     var body: some View{
         HStack(spacing:4){
             Text(intro)
@@ -18,10 +20,11 @@ struct SelectText: View{
                 .font(.system(size: 16))
                 .opacity(0.6)
                 .padding(.vertical,10)
+            Button(action:{ active = viewSelectionValue}, label: {
             Text(click)
                 .fontWeight(.bold)
                 .foregroundColor(ColorConstant.heavyPink)
-            
+            })
             
         }
     }
@@ -76,9 +79,9 @@ struct SelectText_Preview:PreviewProvider
     {
         VStack
         {
-            //SelectText(intro:"where to click",click:"here ofc")
+            SelectText(intro:"where to click",click:"here ofc",active: .constant(.starting),viewSelectionValue: .about)
             //ProfileText(intro: "This app is developped by:", name: "name: Tran Nguyen Anh Khoa", sid: "sid:  s3863956")
-            ContentText(intro: "This is a title", description: "this is a description so it is needed to be long to express all attribute I may miss in the description if I use a small text. This long is good enough I believe")
+            //ContentText(intro: "This is a title", description: "this is a description so it is needed to be long to express all attribute I may miss in the description if I use a small text. This long is good enough I believe")
         }
     }
 }
