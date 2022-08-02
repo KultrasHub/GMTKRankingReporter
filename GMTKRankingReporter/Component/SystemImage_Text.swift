@@ -1,10 +1,14 @@
-//
-//  SystemImage_Text.swift
-//  GMTKRankingReporter
-//
-//  Created by Khoa Tran Nguyen Anh on 29/07/2022.
-//
-
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 1
+  Author: Tran Nguyen Anh Khoa
+  ID: s3863956
+  Created  date: 29/07/2022
+  Last modified: 30/07/2022
+  Acknowledgement: Personal coding
+*/
 import SwiftUI
 
 struct SystemImage_Text: View {

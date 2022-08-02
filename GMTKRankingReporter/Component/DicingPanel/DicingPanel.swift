@@ -1,9 +1,14 @@
-//
-//  DicingPanel.swift
-//  GMTKRankingReporter
-//
-//  Created by Khoa Tran Nguyen Anh on 30/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 1
+  Author: Tran Nguyen Anh Khoa
+  ID: s3863956
+  Created  date: 30/07/2022
+  Last modified: 02/08/2022
+  Acknowledgement: Personal coding
+*/
 
 import SwiftUI
 import Foundation
@@ -11,7 +16,7 @@ struct DicingPanel: View {
     @Binding var viewSelectionValue : Int?
     @Binding var safeValue : Int
     let diceSymbols=["Dice_0","Dice_1","Dice_2","Dice_3","Dice_4","Dice_5","Dice_6","Dice_7"]
-    let highestDiceValue=7
+    let highestDiceValue=8
     @State var selected = [0,0,0]
     var body: some View {
         Rectangle()
@@ -35,11 +40,11 @@ struct DicingPanel: View {
                     Button(action: {
                         var total=0
                         //randomise the dice here
-                        self.selected[0] = Int.random(in: 0...self.highestDiceValue)
+                        self.selected[0] = Int.random(in: 0..<self.highestDiceValue)
                         total = total + self.selected[0]
-                        self.selected[1] = Int.random(in: 0...self.highestDiceValue)
+                        self.selected[1] = Int.random(in: 0..<self.highestDiceValue)
                         total = total + self.selected[1]
-                        self.selected[2] = Int.random(in: 0...self.highestDiceValue)
+                        self.selected[2] = Int.random(in: 0..<self.highestDiceValue)
                         total = total + self.selected[2]
 
                         if(total>=20)
@@ -62,7 +67,7 @@ struct DicingPanel: View {
 struct DicingPanel_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
-            
+            Text("will this be pushed down")
             DicingPanel(viewSelectionValue: .constant(0),safeValue: .constant(0))
         }
     }

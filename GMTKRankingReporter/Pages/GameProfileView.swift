@@ -1,9 +1,14 @@
-//
-//  GameProfileView.swift
-//  GMTKRankingReporter
-//
-//  Created by Khoa on 28/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 1
+  Author: Tran Nguyen Anh Khoa
+  ID: s3863956
+  Created  date: 22/07/2022
+  Last modified: 02/08/2022
+  Acknowledgement: Personal coding
+*/
 
 import SwiftUI
 
@@ -63,7 +68,16 @@ struct GameProfileView: View {
                         
                         //.padding([.leading,.trailing])
                         
-                
+                    Spacer()
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        Link(destination: URL(string: profile.url)!)
+                        {
+                        SelectButton(content: "Check Game")
+                        }
+                        Spacer()
+                    }
                 }
                 .padding([.leading,.trailing])
             }

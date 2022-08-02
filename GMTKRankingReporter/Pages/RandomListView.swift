@@ -1,9 +1,14 @@
-//
-//  RandomListView.swift
-//  GMTKRankingReporter
-//
-//  Created by Khoa Tran Nguyen Anh on 30/07/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 1
+  Author: Tran Nguyen Anh Khoa
+  ID: s3863956
+  Created  date: 27/07/2022
+  Last modified: 30/07/2022
+  Acknowledgement: Personal coding
+*/
 
 import SwiftUI
 
@@ -12,7 +17,6 @@ struct RandomListView: View {
     @StateObject var vm=SelectionViewModel()
     //there are 20 elements so there will be 20 box
     var body: some View{
-        ZStack{
         NavigationView
         {
             ZStack
@@ -51,10 +55,10 @@ struct RandomListView: View {
                          .foregroundColor(.white)
                  )
                  .offset(y:-50)
+                DicingPanel(viewSelectionValue: $vm.selection,safeValue: $vm.currentRow)
+                    .position(x: SizeConstant.halfScreen, y: SizeConstant.screenHeight/2-100)
             }
         }.accentColor(.white)
-            DicingPanel(viewSelectionValue: $vm.selection,safeValue: $vm.currentRow)
-        }
     }
 }
 
