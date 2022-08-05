@@ -40,11 +40,11 @@ struct DicingPanel: View {
                     Button(action: {
                         var total=0
                         //randomise the dice here
-                        self.selected[0] = Int.random(in: 0..<self.highestDiceValue)
+                        self.selected[0] = Int.random(in: 0..<8)
                         total = total + self.selected[0]
-                        self.selected[1] = Int.random(in: 0..<self.highestDiceValue)
+                        self.selected[1] = Int.random(in: 0..<8)
                         total = total + self.selected[1]
-                        self.selected[2] = Int.random(in: 0..<self.highestDiceValue)
+                        self.selected[2] = Int.random(in: 0..<8)
                         total = total + self.selected[2]
 
                         if(total>=20)

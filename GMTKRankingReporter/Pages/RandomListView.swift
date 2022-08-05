@@ -59,7 +59,9 @@ struct RandomListView: View {
                     .position(x: SizeConstant.halfScreen, y: SizeConstant.screenHeight/2-100)
             }
         }.accentColor(.white)
+            .navigationViewStyle(.stack)
     }
+        
 }
 
 struct RandomListView_Previews: PreviewProvider {
